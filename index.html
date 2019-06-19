@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device.width, inital-scale=1.0">
+    <meta http-quiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <title>My Chart</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d')
+
+        let massPopChart = new Chart(myChart, {
+            type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar
+            data: {
+                labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+                datasets: [{
+                    label: 'Population',
+                    data: [
+                        400,
+                        500,
+                        250,
+                        60,
+                        350,
+                        225
+                    ],
+                        backgroundColor: [
+                            '#e8a87c',
+                            '#c38d93',
+                            '#41b3a3',
+                            '#e27d60',
+                            '#659dbd',
+                            '#fbeec1'
+                            
+                        ]
+                }]
+            },
+            options:{
+                title: {
+                    display: true,
+                    text: "Population"
+                },
+                legend: {
+                    position: 'right'
+                }
+            
+            }    
+        })
+    </script>
+</body>
+</html>
